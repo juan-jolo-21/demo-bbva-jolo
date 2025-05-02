@@ -19,7 +19,13 @@ public class SolicitudRest {
 
     @GetMapping
     private ResponseEntity<List<Solicitud>> getAllSolicitudes() {
-        return ResponseEntity.ok(solicitudService.findAll());
+        List<Solicitud> solicitudes = solicitudService.findAll();
+        if (solicitudes.isEmpty()){
+            return ResponseEntity.noContent().build();
+        }else{
+            return ResponseEntity.ok(solicitudes);
+        }
+        
     }
 
     @GetMapping("/{id}")
@@ -55,7 +61,7 @@ public class SolicitudRest {
         }catch (Exception e){
 
             response.put("respuesta", 400);
-            response.put("observación", "generado correctamente");
+            response.put("observación", "se ha producido un error");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
         }
 
