@@ -13,6 +13,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/solicitud")
 public class SolicitudRest {
+    
     @Autowired
     private SolicitudService solicitudService;
 
@@ -34,6 +35,7 @@ public class SolicitudRest {
     @PostMapping(consumes = "application/json")
     private ResponseEntity<Map<String,Object>> saveSolicitud (@RequestBody SolicitudDTO solicitudDTO){
         Solicitud solicitud = new Solicitud();
+        solicitud.setId("");
         solicitud.setTit_nombres(solicitudDTO.tit_nombres);
         solicitud.setTit_app(solicitudDTO.tit_app);
         solicitud.setTit_apm(solicitudDTO.tit_apm);
@@ -48,6 +50,7 @@ public class SolicitudRest {
 
             response.put("respuesta", 201);
             response.put("observación", "generado correctamente");
+            response.put("detalle",solicitudDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(response);
         }catch (Exception e){
 

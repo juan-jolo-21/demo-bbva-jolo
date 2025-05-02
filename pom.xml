@@ -49,11 +49,11 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+                <!--posibles problemas con el conector mysql. cuidado-->
 		<dependency>
-			<groupId>com.mysql</groupId>
-			<artifactId>mysql-connector-j</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+                    <groupId>mysql</groupId>
+                    <artifactId>mysql-connector-java</artifactId>
+                </dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -76,6 +76,8 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+                                                        <!--Atención con el versionado para la compilación de lombok -->
+                                                        <version>1.18.36</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
