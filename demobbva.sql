@@ -13,6 +13,8 @@ create table solicitud_tarjeta  (
 );
 
 
+-- creación de trigger
+
 DELIMITER $$
 CREATE TRIGGER gen_id 
 BEFORE INSERT
@@ -39,6 +41,7 @@ BEGIN
     END IF;
 END;$$
 
+-- datos de prueba
 
 insert into solicitud_tarjeta (
 	tit_nombres,
@@ -79,4 +82,10 @@ values (
     'normal' ,
     'aprobado'
 );
+
+--  creacion de usuario para manejar base de datos
+show grants for 'jolo'@'localhost';
+create user 'jolo'@'localhost' identified by 'demo';
+grant all privileges on * . * to 'jolo'@'localhost';
+flush privileges;
 
