@@ -14,6 +14,7 @@ public class SolicitudDataTest {
         public Solicitud s4 = new Solicitud();
         public Solicitud s5 = new Solicitud();
         public List<Solicitud> mockSolicitudes ;
+        public List<Solicitud> noSolicitudesMock ;
 
         public SolicitudDataTest() {
             s1.setId("STC001");

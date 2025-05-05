@@ -1,6 +1,8 @@
 package com.bbva.demodbalternate.rest;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -44,7 +46,20 @@ public class SolicitudRestTest {
 
     @Test
     void testNoGetSolicitudes() throws Exception {
+        List<Solicitud> noSolicitudes = Collections.emptyList();
+        Mockito.when(solicitudService.findAll()).thenReturn(noSolicitudes);
+        mockMvc.perform(get("/solicitud")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNoContent());
+    }
 
+    @Test
+    void testGetSomeSolicitud() throws Exception {
+        Optional<Solicitud> someSolicitud = Optional.of(solicitudDataTest.s1);
+        Mockito.when(solicitudService.findById("STC001")).thenReturn(someSolicitud);
+        mockMvc.perform(get("/solicitud/STC001")
+            .contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isOk());
     }
 
 }

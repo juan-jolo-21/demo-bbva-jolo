@@ -40,20 +40,20 @@ public class SolicitudRest {
 
     @PostMapping(consumes = "application/json")
     private ResponseEntity<Map<String,Object>> saveSolicitud (@RequestBody SolicitudDTO solicitudDTO){
-        Solicitud solicitud = new Solicitud();
-        solicitud.setId("");
-        solicitud.setTit_nombres(solicitudDTO.tit_nombres);
-        solicitud.setTit_app(solicitudDTO.tit_app);
-        solicitud.setTit_apm(solicitudDTO.tit_apm);
-        solicitud.setTit_dni(solicitudDTO.tit_dni);
-        solicitud.setProducto(solicitudDTO.producto);
-        solicitud.setLinea_aprobada(solicitudDTO.linea_aprobada);
-        solicitud.setStatus_crediticio(solicitudDTO.status_crediticio);
-        solicitud.setStatus_solicitud(solicitudDTO.status_solicitud);
+        
         Map<String, Object> response = new HashMap<>();
         try {
-            Solicitud savedSolicitud = solicitudService.save(solicitud);
-
+            Solicitud solicitud = new Solicitud();
+            solicitud.setId("");
+            solicitud.setTit_nombres(solicitudDTO.tit_nombres);
+            solicitud.setTit_app(solicitudDTO.tit_app);
+            solicitud.setTit_apm(solicitudDTO.tit_apm);
+            solicitud.setTit_dni(solicitudDTO.tit_dni);
+            solicitud.setProducto(solicitudDTO.producto);
+            solicitud.setLinea_aprobada(solicitudDTO.linea_aprobada);
+            solicitud.setStatus_crediticio(solicitudDTO.status_crediticio);
+            solicitud.setStatus_solicitud(solicitudDTO.status_solicitud);
+            solicitudService.save(solicitud);
             response.put("respuesta", 201);
             response.put("observación", "generado correctamente");
             response.put("detalle",solicitudDTO);
