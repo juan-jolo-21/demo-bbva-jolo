@@ -89,3 +89,5 @@ create user 'jolo'@'localhost' identified by 'demo';
 grant all privileges on * . * to 'jolo'@'localhost';
 flush privileges;
 
+rename table solicitud_tarjeta to application_card;
+

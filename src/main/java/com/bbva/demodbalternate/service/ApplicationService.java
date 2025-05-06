@@ -1,7 +1,7 @@
 package com.bbva.demodbalternate.service;
 
-import com.bbva.demodbalternate.model.Solicitud;
-import com.bbva.demodbalternate.repository.SolicitudRepository;
+import com.bbva.demodbalternate.model.Application;
+import com.bbva.demodbalternate.repository.ApplicationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
@@ -13,27 +13,27 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SolicitudService implements SolicitudRepository {
+public class ApplicationService implements ApplicationRepository {
     @Autowired
-    private SolicitudRepository solicitudRepository;
+    private ApplicationRepository solicitudRepository;
 
     @Override
-    public List<Solicitud> findAll() {
+    public List<Application> findAll() {
         return solicitudRepository.findAll();
     }
 
     @Override
-    public List<Solicitud> findAll(Sort sort) {
+    public List<Application> findAll(Sort sort) {
         return null;
     }
 
     @Override
-    public Page<Solicitud> findAll(Pageable pageable) {
+    public Page<Application> findAll(Pageable pageable) {
         return null;
     }
 
     @Override
-    public List<Solicitud> findAllById(Iterable<String> strings) {
+    public List<Application> findAllById(Iterable<String> strings) {
         return null;
     }
 
@@ -48,7 +48,7 @@ public class SolicitudService implements SolicitudRepository {
     }
 
     @Override
-    public void delete(Solicitud entity) {
+    public void delete(Application entity) {
 
     }
 
@@ -58,7 +58,7 @@ public class SolicitudService implements SolicitudRepository {
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Solicitud> entities) {
+    public void deleteAll(Iterable<? extends Application> entities) {
 
     }
 
@@ -68,17 +68,17 @@ public class SolicitudService implements SolicitudRepository {
     }
 
     @Override
-    public <S extends Solicitud> S save(S entity) {
+    public <S extends Application> S save(S entity) {
         return solicitudRepository.save(entity);
     }
 
     @Override
-    public <S extends Solicitud> List<S> saveAll(Iterable<S> entities) {
+    public <S extends Application> List<S> saveAll(Iterable<S> entities) {
         return null;
     }
 
     @Override
-    public Optional<Solicitud> findById(String s) {
+    public Optional<Application> findById(String s) {
         return solicitudRepository.findById(s);
     }
 
@@ -93,17 +93,17 @@ public class SolicitudService implements SolicitudRepository {
     }
 
     @Override
-    public <S extends Solicitud> S saveAndFlush(S entity) {
+    public <S extends Application> S saveAndFlush(S entity) {
         return null;
     }
 
     @Override
-    public <S extends Solicitud> List<S> saveAllAndFlush(Iterable<S> entities) {
+    public <S extends Application> List<S> saveAllAndFlush(Iterable<S> entities) {
         return null;
     }
 
     @Override
-    public void deleteAllInBatch(Iterable<Solicitud> entities) {
+    public void deleteAllInBatch(Iterable<Application> entities) {
 
     }
 
@@ -118,42 +118,42 @@ public class SolicitudService implements SolicitudRepository {
     }
 
     @Override
-    public Solicitud getOne(String s) {
+    public Application getOne(String s) {
         return null;
     }
 
     @Override
-    public Solicitud getById(String s) {
+    public Application getById(String s) {
         return null;
     }
 
     @Override
-    public <S extends Solicitud> Optional<S> findOne(Example<S> example) {
+    public <S extends Application> Optional<S> findOne(Example<S> example) {
         return Optional.empty();
     }
 
     @Override
-    public <S extends Solicitud> List<S> findAll(Example<S> example) {
+    public <S extends Application> List<S> findAll(Example<S> example) {
         return null;
     }
 
     @Override
-    public <S extends Solicitud> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends Application> List<S> findAll(Example<S> example, Sort sort) {
         return null;
     }
 
     @Override
-    public <S extends Solicitud> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public <S extends Application> Page<S> findAll(Example<S> example, Pageable pageable) {
         return null;
     }
 
     @Override
-    public <S extends Solicitud> long count(Example<S> example) {
+    public <S extends Application> long count(Example<S> example) {
         return 0;
     }
 
     @Override
-    public <S extends Solicitud> boolean exists(Example<S> example) {
+    public <S extends Application> boolean exists(Example<S> example) {
         return false;
     }
 }
