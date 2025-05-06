@@ -23,11 +23,11 @@ public class PersonDataTest {
         p4.setLast_name_person("Matamoros");
         p5.setLast_name_person("Paredes");
 
-        p1.setDni(77411201);
-        p2.setDni(77411202);
-        p3.setDni(77411203);
-        p4.setDni(77411204);
-        p5.setDni(77411205);
+        p1.setDni("77411201");
+        p2.setDni("77411202");
+        p3.setDni("77411203");
+        p4.setDni("77411204");
+        p5.setDni("77411205");
     }
 
     

@@ -13,7 +13,7 @@ import lombok.Data;
 public class Person {
     @Id
     @Column(name =  "dni")
-    private long dni;
+    private String dni;
     private String name_person;
     private String last_name_person;
 }

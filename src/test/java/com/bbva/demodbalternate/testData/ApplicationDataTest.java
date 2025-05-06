@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.bbva.demodbalternate.model.Application;
-import com.bbva.demodbalternate.testData.PersonDataTest;
 
 public class ApplicationDataTest {
 
